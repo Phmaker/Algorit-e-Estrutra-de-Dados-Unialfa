@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+	int multiplicar; 
+	char escolhausuario;
+	
+    // Solicita ao usuário o número de elementos do vetor
+    printf("Digite o número de elementos do vetor: ");
+    scanf("%d", &n);
+
+	// Declara o vetor com tamanho variável
+    int vetor[n];
+
+    // Inicializa o vetor com valores de 1 a n
+    for (i = 0; i < n; i++) {
+        vetor[i] = i + 1;
+    }
+    
+	do{
+	
+	printf("\n\nEscolha uma das opções\n\n");
+	printf("\nM = Multiplicar");
+	printf("\nI = Inverter");
+	printf("\nO = Ordenar\n\n\n");
+	scanf(" %c", &escolhausuario);
+	
+	
+		if(escolhausuario == 'M' || escolhausuario == 'm'){
+			printf("\n\nDigite o valor que deseja multiplicar: \n");
+			scanf("%d", &multiplicar);
+		
+			for(i = 0; i < n; i++){
+				vetor[i] *= multiplicar;
+		}
+		}else if(escolhausuario == 'I' || escolhausuario == 'i'){
+			for (int i = 0; i < n / 2; i++){
+			int temp = vetor[i];
+			vetor[i] = vetor[n - 1 - i];
+			vetor[n - 1 - i] = temp;
+		}
+	 	}else if (escolhausuario == 'O' || escolhausuario == 'o') {
+	 	
+	 	
+    	}else{
+    		printf("\n\nFavor Escolha uma Opção Valida\n\n");
+	}
+    
+    
+	 }while (escolhausuario != 'M' && escolhausuario != 'm' && escolhausuario != 'I' && escolhausuario != 'i' && escolhausuario != 'O' && escolhausuario != 'o');
+
+// Imprime os elementos do vetor na tela
+    printf("\n\nOs elementos do vetor são:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+
+    
